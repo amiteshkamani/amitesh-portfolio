@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./ui/section-heading";
 import { Mail, Phone, Linkedin } from "lucide-react";
+import profileImage from "../assets/profile.svg";
 
 export default function About() {
   return (
@@ -17,14 +18,11 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <div className="relative group overflow-hidden rounded-lg bg-gradient-to-r from-primary to-secondary aspect-[4/3] flex items-center justify-center">
-              <svg 
-                className="w-1/2 h-1/2 text-white/20"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"/>
-                <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z"/>
-              </svg>
+              <img 
+                src={profileImage} 
+                alt="Amitesh Kamani" 
+                className="w-3/4 h-3/4 object-contain z-10"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-60"></div>
             </div>
           </motion.div>
