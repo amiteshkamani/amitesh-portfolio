@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { contactSchema } from "@shared/schema";
 import nodemailer from "nodemailer";
+import { addHtmlDownloadEndpoint } from "./get-html";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -57,6 +58,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     }
   });
+
+  // Add HTML download endpoints
+  addHtmlDownloadEndpoint(app);
 
   const httpServer = createServer(app);
   return httpServer;
